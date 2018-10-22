@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Laberinto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class = "maze">
+  <h2> CE2103 Tarea ExtraClase#4  </h2>
+  <ion-grid class = "maze-grid">
+    <ion-row *ngFor = "let row of obsMatrix">
+        <div  class = "row" *ngFor = "let col of row" [ngSwitch] = "col">
+            <ion-col *ngSwitchCase = "'start'" style = "background:#0000FF"></ion-col>
+            <ion-col *ngSwitchCase = "'end'" style = "background:#0000FF"></ion-col>
+            <ion-col *ngSwitchCase = "'obs'" style = "background:#000000"></ion-col>
+            <ion-col *ngSwitchCase = "'free'" style = "background:#bdbdbd"></ion-col>
+        </div>
+    </ion-row>
+  </ion-grid>  
+  <button ion-button color="dark">Comenzar</button>
+
+</ion-content>
